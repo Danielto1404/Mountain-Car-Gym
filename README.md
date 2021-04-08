@@ -9,6 +9,6 @@ I've picked Deep-Q-Learning algorithm to train agent.
 * [agents.py](agents.py) - Implementation of DQN-algorihhm for RL.
 * [Utils](core) - package of implementation class like:
 	* [buffer for store transitions](core/buffer_indexer.py)
-	* [epsilon-greedy strategy](core/epsilon_strategy.py)
+	* [epsilon-greedy strategy](core/eps_strategy.py)
 	* [modified rewards functions](core/rewards.py)
 	* [loading manager & best action selector](core/action_selector.py)

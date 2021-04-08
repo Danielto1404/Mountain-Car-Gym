@@ -257,7 +257,7 @@ if __name__ == '__main__':
     agent = Agent(state_dim=[2], action_dim=3)
     trainer = AgentTrainer(agent=agent, episodes=300, reward_function=velocity_potentials)
 
-    rs = trainer.train(path='trained_models/car_model2.pt')
+    rs = trainer.train(path='trained_models/car_model.pt')
 
     plt.figure(figsize=(16, 9))
     plt.grid()

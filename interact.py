@@ -28,12 +28,12 @@ def interact(model, games=20, env=gym.make('MountainCar-v0')):
 if __name__ == '__main__':
     m = load_selector('trained_models/car_model.pt')
 
-    n_games = 20
+    n_games = 40
     rewards = interact(model=m, games=n_games)
 
     plt.figure(figsize=(16, 9))
     plt.grid()
-    plt.plot(range(n_games), rewards, color='green')
+    plt.plot(range(n_games), rewards, color='magenta', marker='o')
     plt.xlabel('game')
     plt.ylabel('reward')
     plt.savefig('plots/car-agent-interaction')

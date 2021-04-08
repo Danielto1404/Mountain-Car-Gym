@@ -1,8 +1,9 @@
 import gym
 import matplotlib.pyplot as plt
 import numpy as np
-from core.action_selector import load_selector
 from tqdm import tqdm
+
+from core.action_selector import load_selector
 
 
 def interact(model, games=20, env=gym.make('MountainCar-v0')):
@@ -27,7 +28,7 @@ def interact(model, games=20, env=gym.make('MountainCar-v0')):
 if __name__ == '__main__':
     m = load_selector('trained_models/car_model.pt')
 
-    n_games = 100
+    n_games = 20
     rewards = interact(model=m, games=n_games)
 
     plt.figure(figsize=(16, 9))
@@ -35,4 +36,5 @@ if __name__ == '__main__':
     plt.plot(range(n_games), rewards, color='green')
     plt.xlabel('game')
     plt.ylabel('reward')
+    plt.savefig('plots/car-agent-interaction')
     plt.show()

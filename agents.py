@@ -254,34 +254,15 @@ class AgentEnsemble:
 
 
 if __name__ == '__main__':
-    agents_ensemble = AgentEnsemble(n_agents=3, n_games=150, state_dim=[2], action_dim=3,
-                                    reward_function=velocity_scaler,
-                                    verbose=True)
-    rs = agents_ensemble.train()
-    #
-    # plt.plot(range(len(rs)), rs)
-    # plt.xlabel('game')
-    # plt.ylabel('mean reward')
-    # plt.show()
+    agent = Agent(state_dim=[2], action_dim=3)
+    trainer = AgentTrainer(agent=agent, episodes=300, reward_function=velocity_potentials)
 
-    # agent = Agent(state_dim=[2], action_dim=3)
-    # trainer = AgentTrainer(agent=agent, episodes=200, reward_function=velocity_potentials)
-    #
-    # rs = trainer.train()
+    rs = trainer.train(path='trained_models/car_model2.pt')
 
     plt.figure(figsize=(16, 9))
     plt.grid()
     plt.plot(range(len(rs)), rs, color='purple', linestyle='--', linewidth=1.5)
     plt.xlabel('game')
     plt.ylabel('mean reward')
-    plt.savefig('plots/1-car-agent')
+    plt.savefig('plots/car-agent-learning')
     plt.show()
-    #
-    # m = load_selector('trained_models/car_model.pt')
-    # #
-    # n = 1000
-    # rs, values = interact(model=m, games=n)
-
-    # plt.plot(range(n_games), rewards, color='green')
-    # plt.plot(range(n_games), values, color='red')
-    # plt.show()

@@ -1,6 +1,6 @@
 ### Mountain Car Agent
 
-Agent implementation of **[gym mountain car environment](https://gym.openai.com/envs/MountainCar-v0)**
+Implementation of RL agent for **[gym mountain car environment](https://gym.openai.com/envs/MountainCar-v0)**
 
 I've picked Deep-Q-Learning algorithm to train agent.
 
